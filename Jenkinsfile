@@ -13,7 +13,7 @@ pipeline {
         stage('show tree stage') {
                     steps {
                         echo "show local dir"
-                        sh returnStatus: true, script: 'ls -l'
+                        sh 'ls -l'
                     }
         }
         stage('compile stage') {
