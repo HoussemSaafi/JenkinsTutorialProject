@@ -10,7 +10,7 @@ pipeline {
                 }
             }
         }
-        stage('compile stage') {
+        stage('show tree stage') {
                     steps {
                         echo "show local dir"
                         sh returnStatus: true, script: 'ls -l'
