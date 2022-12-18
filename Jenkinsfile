@@ -16,6 +16,7 @@ pipeline {
 //                 echo "java files compiled"
 //             }
 //         }
+//new commit
         stage('run stage') {
             steps {
                 powershell '''java --class-path "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\myFirstPipeline\\out\\production\\JenkinsTutorialProject" td4.tp_parking.Main
