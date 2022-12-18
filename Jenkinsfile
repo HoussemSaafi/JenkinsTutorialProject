@@ -2,25 +2,24 @@
 pipeline {
     agent any
     stages {
-        stage('stage one') {
+        stage('clone stage') {
             steps {
                 script {
-                    tags_extra = "value_1"
+                    git branch: 'main', url: 'https://github.com/HoussemSaafi/JenkinsTutorialProject.git'
+                     echo "git repository cloned"
                 }
-                echo "tags_extra: ${tags_extra}"
             }
         }
-        stage('stage two') {
+        stage('compile stage') {
             steps {
-                echo "tags_extra: ${tags_extra}"
+                sh returnStatus: true, script: 'javac *.java'
+                echo "java files compiled"
             }
         }
-        stage('stage three') {
-            when {
-                expression { tags_extra != 'bla' }
-            }
+        stage('run stage') {
             steps {
-                echo "tags_extra: ${tags_extra}"
+                sh returnStatus: true, script: 'java Main'
+                echo "main application ran"
             }
         }
     }
