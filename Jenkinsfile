@@ -18,7 +18,9 @@ pipeline {
 //         }
         stage('run stage') {
             steps {
-                powershell 'java -classpath "C:\ProgramData\Jenkins\.jenkins\workspace\myFirstPipeline\out\production\JenkinsTutorialProject\td4\tp_parking" td4.tp_parking.Main'
+                powershell '''java -classpath C:\\Users\\houss\\Desktop\\GithubProjects\\JenkinsTutorialProject\\out\\production\\JenkinsTutorialProj
+                ect td4.tp_parking.Main
+                '''
                 echo "main application ran"
             }
         }
