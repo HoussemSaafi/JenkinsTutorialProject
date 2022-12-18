@@ -12,13 +12,13 @@ pipeline {
         }
         stage('compile stage') {
             steps {
-                sh returnStatus: true, script: 'javac *.java'
+                powershell 'javac *.java'
                 echo "java files compiled"
             }
         }
         stage('run stage') {
             steps {
-                sh returnStatus: true, script: 'java Main'
+                powershell 'java Main'
                 echo "main application ran"
             }
         }
