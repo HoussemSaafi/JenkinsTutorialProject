@@ -10,12 +10,6 @@ pipeline {
                 }
             }
         }
-        stage('show tree stage') {
-                    steps {
-                        echo "show local dir"
-                        sh 'ls -l'
-                    }
-        }
         stage('compile stage') {
             steps {
                 sh returnStatus: true, script: 'javac *.java'
