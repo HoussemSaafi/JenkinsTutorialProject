@@ -10,15 +10,15 @@ pipeline {
                 }
             }
         }
-        stage('compile stage') {
-            steps {
-                powershell 'javac *.java'
-                echo "java files compiled"
-            }
-        }
+//         stage('compile stage') {
+//             steps {
+//                 powershell 'javac *.java'
+//                 echo "java files compiled"
+//             }
+//         }
         stage('run stage') {
             steps {
-                powershell 'java Main'
+                powershell 'java -classpath C:\ProgramData\Jenkins\.jenkins\workspace\myFirstPipeline\out\production\JenkinsTutorialProject\td4\tp_parking td4.tp_parking.Main'
                 echo "main application ran"
             }
         }
