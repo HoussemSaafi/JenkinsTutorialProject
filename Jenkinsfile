@@ -5,7 +5,7 @@ pipeline {
         stage('clone stage') {
             steps {
                 script {
-                    git branch: 'main', url: 'https://github.com/HoussemSaafi/JenkinsTutorialProject.git'
+                    git branch: 'main', credentialsId: '54eb2fe9-b57b-4a5b-bc36-bc1c75156732', url: 'https://github.com/HoussemSaafi/JenkinsTutorialProject.git'
                      echo "git repository cloned"
                 }
             }
